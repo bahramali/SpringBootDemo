@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<h2>Bordered Table</h2>
+<p>Click on the links to see the result</p>
+
+<table style="width:60%">
+    <tr>
+        <th>Account</th>
+        <th>Id</th>
+        <th>Type</th>
+        <th>Link</th>
+    </tr>
+    <tr>
+        <td>personal</td>
+        <td>1234</td>
+        <td></td>
+        <td><a href="#" th:href="@{/greeting(account='personal', id=1234)}">
+            http://localhost:5000/greeting?path=personal&id=1234</a></td>
+    </tr>
+    <tr>
+        <td>xxx</td>
+        <td>1234</td>
+        <td></td>
+        <td><a href="#" th:href="@{/greeting(account='xxx', id=1234)}">
+            http://localhost:5000/greeting?path=xxx&id=1234</a></td>
+    </tr>
+    <tr>
+        <td>personal</td>
+        <td>-1234</td>
+        <td></td>
+        <td><a href="#" th:href="@{/greeting(account='personal', id=-1234)}">
+            http://localhost:5000/greeting?path=personal&id=-1234</a></td>
+    </tr>
+
+    <tr>
+        <td>business</td>
+        <td></td>
+        <td>small</td>
+        <td><a href="#" th:href="@{/greeting(account='business', type='small')}">
+            http://localhost:5000/greeting?path=business&type=small</a></td>
+    </tr>
+    <tr>
+        <td>personal</td>
+        <td></td>
+        <td>small</td>
+        <td><a href="#" th:href="@{/greeting(account='personal', type='small')}">
+            http://localhost:5000/greeting?path=personal&type=small</a></td>
+    </tr>
+    <tr>
+        <td>xxx</td>
+        <td></td>
+        <td>small</td>
+        <td><a href="#" th:href="@{/greeting(account='xxx', type='small')}">
+            http://localhost:5000/greeting?path=xxx&type=small</a></td>
+    </tr>
+
+    <tr>
+        <td>personal</td>
+        <td></td>
+        <td>big</td>
+        <td><a href="#" th:href="@{/greeting(account='personal', type='big')}">
+            http://localhost:5000/greeting?path=personal&type=big</a></td>
+    </tr>
+    <tr>
+        <td>business</td>
+        <td></td>
+        <td>big</td>
+        <td><a href="#" th:href="@{/greeting(account='business', type='big')}">
+            http://localhost:5000/greeting?path=business&type=big</a></td>
+    </tr>
+    <tr>
+        <td>xxx</td>
+        <td></td>
+        <td>big</td>
+        <td><a href="#" th:href="@{/greeting(account='xxx', type='big')}">
+            http://localhost:5000/greeting?path=xxx&type=big</a></td>
+    </tr>
+    <tr>
+        <td>personal</td>
+        <td></td>
+        <td>xxx</td>
+        <td><a href="#" th:href="@{/greeting(account='personal', type='xxx')}">
+            http://localhost:5000/greeting?path=personal&type=xxx</a></td>
+    </tr>
+    <tr>
+        <td>xxx</td>
+        <td></td>
+        <td>xxx</td>
+        <td><a href="#" th:href="@{/greeting(account='xxx', type='xxx')}">
+            http://localhost:5000/greeting?path=xxx&type=xxx</a></td>
+    </tr>
+</table>
+
+</body>
+</html>
