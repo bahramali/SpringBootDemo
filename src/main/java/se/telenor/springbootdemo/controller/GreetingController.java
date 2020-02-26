@@ -2,6 +2,7 @@ package se.telenor.springbootdemo.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import se.telenor.springbootdemo.model.Account;
 import se.telenor.springbootdemo.model.Path;
@@ -23,16 +24,18 @@ public class GreetingController {
     }
 
     @RequestMapping(value = "/greeting", method = RequestMethod.GET)
-    @ResponseBody
-    public ResponseEntity greeting(@RequestParam(value = "account") String account,
+    public String greeting(@RequestParam(value = "account") String account,
                                    @RequestParam(value = "id", required = false) Integer id,
-                                   @RequestParam(value = "type", required = false) String type) {
+                                   @RequestParam(value = "type", required = false) String type, Model model) {
         Path path = Path.builder()
                 .withId(id)
                 .withAccount(Account.fromExternalValue(account))
                 .withType(Type.fromExternalValue(type))
                 .build();
 
-        return ResponseEntity.accepted().body(greetingService.getMessage(path));
+        model.addAttribute("response",greetingService.getMessage(path));
+
+        return "answer";
+        //return ResponseEntity.accepted().body(greetingService.getMessage(path));
     }
 }
