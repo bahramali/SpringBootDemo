@@ -1,13 +1,13 @@
 # SpringBootDemo
 
-Pre requirement
-- JDK 11
-- Maven
-- Docker
+##Installing the Prerequisites.
+The following thing are needed to successfully install
+* [JDK 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
+* [Maven](https://maven.apache.org/download.cgi)
+* [Docker](https://docs.docker.com/docker-for-windows/install/)
 
-How to run:
-- "mvn clean install -T1C"
-- "docker build -f Dockerfile -t docker-spring-boot ."
-- "docker run -p 5000:5000 docker-spring-boot"
-- open http://localhost:5000/
-- run the get request by clicking on the links
+##build the application and docker:
+* "mvn clean install -T1C"
+* "docker build -f Dockerfile -t docker-spring-boot ."
+* "docker run -p 5000:5000 docker-spring-boot"
+* Browse to http://localhost:5000/ and click on the links
